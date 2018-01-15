@@ -14,29 +14,27 @@ class ViewController: UIViewController {
     var noOfPairOfCards : Int {
         return (cardButtons.count+1)/2
     }
- 
+    
     /*private(set) var flipCount = 0 {
-        didSet {
-             flipCountLabel.text = "Flips: \(flipCount)"
-        }
-    }*/
+     didSet {
+     flipCountLabel.text = "Flips: \(flipCount)"
+     }
+     }*/
     
     @IBOutlet private var cardButtons: [UIButton]!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBAction private func touchCard(_ sender: UIButton) {
         //flipCount += 1
-    
+        
         if let cardNumber = cardButtons.index(of: sender){
             // check card in model and update status  for isFaceUp and isMatched
             game.chooseCard(at: cardNumber)
             // update view from model once the status has been updated in model
             updateViewFromModel()
         }
-        
-        
     }
     
-     private func updateViewFromModel(){
+    private func updateViewFromModel(){
         // check for status for each card in model and update view.
         for index in cardButtons.indices{
             let button = cardButtons[index]
@@ -52,6 +50,7 @@ class ViewController: UIViewController {
         //update score
         scoreLabel.text = "Score:\(game.score)"
     }
+    
     private var emoojiChoices = ["😈","👽","🤖","👻","🎃","🦇","🐵"]
     private var emoji = [Card:String]()
     

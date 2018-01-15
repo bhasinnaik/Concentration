@@ -1,15 +1,15 @@
  //
-//  Concentration.swift
-//  Concentration
-//
-//  Created by Bhasin on 10/12/17.
-//  Copyright © 2017 Bhasin. All rights reserved.
-//
-
-import Foundation
+ //  Concentration.swift
+ //  Concentration
+ //
+ //  Created by Bhasin on 10/12/17.
+ //  Copyright © 2017 Bhasin. All rights reserved.
+ //
+ 
+ import Foundation
  
  class Concentration{
-   private(set) var cards = [Card]()
+    private(set) var cards = [Card]()
     private(set) var score : Int
     
     
@@ -31,9 +31,8 @@ import Foundation
         set {
             for index in cards.indices{
                 cards[index].isFaceUp = (index == newValue)
-            
+                
             }
-            
         }
     }
     
@@ -67,11 +66,10 @@ import Foundation
                 }else{
                     cards[index].faceupOnce = true
                 }
-                
-                
             }
         }
-    } 
+    }
+    
     init(numberOfPairsOfCards: Int){
         for _ in 1...numberOfPairsOfCards{
             let card = Card()
