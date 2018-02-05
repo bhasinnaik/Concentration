@@ -86,10 +86,14 @@
         if count < 2 {
             return
         }
-        for index in self.indices {
+        /*for index in self.indices {
             let diff = distance(from: index, to: endIndex)
             let newIndex =  Int( arc4random_uniform(UInt32(diff)))
             (self[index],self[newIndex]) = (self[newIndex],self[index])
+            
+        }*/
+        for _ in self.indices{
+            sort{(_,_) in arc4random() < arc4random() }
         }
     }
  }
