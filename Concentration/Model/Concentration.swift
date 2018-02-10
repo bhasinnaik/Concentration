@@ -39,8 +39,10 @@
     func newGame(){
         for index in cards.indices{
             cards[index].isFaceUp = false
-            cards.shuffle()
+            cards[index].isMatched = false
         }
+        cards.shuffle()
+        score = 0
     }
     
     func chooseCard(at index: Int){

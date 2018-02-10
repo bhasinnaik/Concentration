@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func touchNewGame(_ sender: UIButton) {
+        game.newGame()
+        updateViewFromModel()
+    }
     private func updateViewFromModel(){
         // check for status for each card in model and update view.
         for index in cardButtons.indices{
